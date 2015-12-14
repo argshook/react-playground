@@ -1,4 +1,6 @@
 var path = require('path');
+var autoprefixer = require('autoprefixer');
+var precss = require('precss');
 var webpack = require('webpack');
 var Clean = require('clean-webpack-plugin');
 
@@ -25,6 +27,10 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader'
       }
     ]
   },
@@ -36,6 +42,11 @@ module.exports = {
       exclude: [node_modules_dir]
     }),
     new webpack.optimize.DedupePlugin()
-  ]
+  ],
+
+
+  postcss: function() {
+    return [autoprefixer, precss];
+  }
 };
 
