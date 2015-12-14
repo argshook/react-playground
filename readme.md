@@ -8,4 +8,6 @@
 
 ## How
 
-1. `npm start` - for dev
+1. `npm start` - for dev (server at [http://localhost:8080/](localhost:8080))
+1. `npm run build` - for prod
+

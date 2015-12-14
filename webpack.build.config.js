@@ -1,5 +1,7 @@
 var path = require('path');
-var webpack = require('webpack');
+var Clean = require('clean-webpack-plugin');
+
+var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
   entry: {
@@ -8,21 +10,26 @@ module.exports = {
   },
 
   output: {
-    filename: 'app.js',
-    path: __dirname + '/dist'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'app.js'
   },
 
   module: {
     loaders: [
       {
-        loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=react'],
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        exclude: [node_modules_dir],
+        loader: 'babel-loader?presets[]=es2015,presets[]=react'
       },
       {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]'
       }
     ]
-  }
+  },
+
+  plugins: [
+    new Clean(['dist'])
+  ]
 };
+
