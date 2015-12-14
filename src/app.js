@@ -1,10 +1,11 @@
 import React from 'react';
+import Button from './components/button/button-component.js';
 
 export default React.createClass({
   render: function() {
     return (
       <div className="greeting">
-        <h1>Hello, {2 + 2}</h1>
+        <Button />
       </div>
     );
   }

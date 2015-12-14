@@ -10,3 +10,8 @@ body {
   color: $color;
   @include something($color);
 }
+
+button {
+  padding: 10em;
+}
+
