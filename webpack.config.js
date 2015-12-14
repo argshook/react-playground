@@ -15,13 +15,9 @@ module.exports = {
   module: {
     loaders: [
       {
+        loaders: ['react-hot', 'babel-loader?presets[]=es2015,presets[]=react'],
         test: /\.jsx?$/,
-        loader: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          cacheDirectory: true,
-          presets: ['es2015', 'react']
-        }
       },
       {
         test: /\.html$/,
