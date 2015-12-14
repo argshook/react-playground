@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --colors --hot --inline",
-    "build": "NODE_ENV=production webpack -p --config webpack.build.config.js"
+    "build": "NODE_ENV=production webpack --config webpack.build.config.js"
   },
   "author": "argshook <argshook@gmail.com>",
   "license": "ISC",
@@ -23,6 +23,7 @@
   },
   "babel": {},
   "dependencies": {
-    "react": "^0.14.3"
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3"
   }
 }

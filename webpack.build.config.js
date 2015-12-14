@@ -1,11 +1,12 @@
 var path = require('path');
+var webpack = require('webpack');
 var Clean = require('clean-webpack-plugin');
 
 var node_modules_dir = path.resolve(__dirname, 'node_modules');
 
 module.exports = {
   entry: {
-    javascript: path.resolve(__dirname, './index.js'),
+    javascript: path.resolve(__dirname, 'index.js'),
     html: path.resolve(__dirname, 'src/index.html')
   },
 
@@ -29,7 +30,12 @@ module.exports = {
   },
 
   plugins: [
-    new Clean(['dist'])
+    new Clean(['dist']),
+    new webpack.optimize.UglifyJsPlugin({
+      include: /\.jsx?$/,
+      exclude: [node_modules_dir]
+    }),
+    new webpack.optimize.DedupePlugin()
   ]
 };
 
