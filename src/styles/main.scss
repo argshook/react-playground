@@ -1,0 +1,12 @@
+@mixin something($color: #bada55) {
+  color: $color;
+  @content;
+}
+
+$color: blue;
+
+body {
+  background-image: linear-gradient(green, blue);
+  color: $color;
+  @include something($color);
+}
