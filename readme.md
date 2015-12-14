@@ -13,6 +13,8 @@
 
 ## test
 
+with *mocha* and *chai*
+
 1. `npm test` - once
 1. `npm run test:watch` - guess what
 
