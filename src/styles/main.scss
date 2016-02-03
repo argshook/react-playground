@@ -6,12 +6,15 @@
 $color: blue;
 
 body {
-  background-image: linear-gradient(green, blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  background-image: linear-gradient(#222, #000);
+  background-repeat: no-repeat;
   color: $color;
   @include something($color);
-}
-
-button {
-  padding: 10em;
 }
 

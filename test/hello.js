@@ -1,11 +1,11 @@
 import { expect } from 'chai';
-import Button from '../src/components/button/button-component.js';
+import Button from '../src/components/button/button.js';
 
-describe('someting', () => {
+describe('something', () => {
   it('should work', function() {
-    var isChaiWorking = true;
-    console.log(new Button().props);
-    expect(isChaiWorking).to.be.true;
+    let button = new Button();
+    console.dir(button);
+    expect(true).to.be.true;
   });
 });
 
