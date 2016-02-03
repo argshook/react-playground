@@ -2,8 +2,7 @@
 
 ## How to do
 
-1. `npm i -g babel-cli babel webpack mocha istanbul`
-1. `npm i -g webpack-dev-server`
+1. `npm i -g babel-cli babel webpack mocha istanbul webpack-dev-server`
 1. `npm i`
 
 ## How
