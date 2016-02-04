@@ -12,12 +12,8 @@ export default class Button extends React.Component {
 
   onClick(e) {
     this.setState({
-      count: this.calculateCount()
+      count: this.state.count + 1
     });
-  }
-
-  calculateCount() {
-    return this.state.count % 2 ? this.state.count - 5 : this.state.count + 3;
   }
 
   render() {

@@ -1,12 +1,6 @@
-@mixin something($color: #bada55) {
-  color: $color;
-  @content;
-}
-
-$color: blue;
-
 body {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
@@ -14,7 +8,9 @@ body {
   margin: 0;
   background-image: linear-gradient(#222, #000);
   background-repeat: no-repeat;
-  color: $color;
-  @include something($color);
+}
+
+h2 {
+  color: #fff;
 }
 
