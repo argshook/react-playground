@@ -6,7 +6,6 @@
   "scripts": {
     "test": "mocha test/**/* --compilers js:babel-core/register,scss:test/css-null-compiler.js --recursive",
     "test:watch": "npm test -- --watch",
-    "test:cover": "istanbul cover ./node_modules/.bin/_mocha -- --compilers js:babel-core/register",
     "start": "webpack-dev-server --progress --colors --hot --inline",
     "build": "NODE_ENV=production webpack --config webpack.build.config.js"
   },
@@ -25,7 +24,6 @@
     "css-loader": "^0.23.0",
     "file-loader": "^0.8.5",
     "mocha": "^2.3.4",
-    "mocha-istanbul": "^0.2.0",
     "node-sass": "^3.4.2",
     "postcss": "^5.0.12",
     "postcss-loader": "^0.8.0",
