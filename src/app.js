@@ -1,13 +1,9 @@
 import React from 'react';
-import Button from './components/button/button.js';
+import Button from './components/button';
 
-export default React.createClass({
-  render: function() {
-    return (
-      <div className="greeting">
-        <Button />
-      </div>
-    );
+export default class App extends React.Component {
+  render() {
+    return <Button />;
   }
-});
+};
 

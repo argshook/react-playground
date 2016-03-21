@@ -10,6 +10,10 @@ export default class Button extends React.Component {
     };
   }
 
+  updateCount() {
+    this.setState({ count: this.state.count + 1 });
+  }
+
   onClick(e) {
     this.setState({
       count: this.state.count + 1
