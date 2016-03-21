@@ -1,8 +1,16 @@
+.heading {
+  font-size: 3em;
+  text-align: center;
+}
+
 .button {
-  padding: 1em;
-  background: green;
+  margin: .5em;
+  padding: .5em;
   font-size: 5em;
   color: #fff;
   border: 0;
+
+  &--increment { background: green; }
+  &--decrement { background: red; }
 }
 

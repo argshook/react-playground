@@ -23,6 +23,6 @@ with *mocha* and *chai*
 
 - [ ] Test coverage reports
 - [ ] Figure out proper TDD
-- [ ] Redux
+- [X] Redux
 - [ ] Improve webpack dev/build configs
 

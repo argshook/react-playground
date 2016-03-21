@@ -1,29 +1,43 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
 import './button.scss';
 
-export default class Button extends React.Component {
+import { increment, decrement } from '../../actions/counter.js';
+
+class Button extends React.Component {
   constructor(props) {
-    super();
-
-    this.state = {
-      count: 0
-    };
-  }
-
-  updateCount() {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  onClick(e) {
-    this.setState({
-      count: this.state.count + 1
-    });
+    super(props);
   }
 
   render() {
     return (
-      <button className="button" onClick={this.onClick.bind(this)}>{this.state.count}</button>
+      <div>
+        <h2 className="heading">{this.props.state.counter}</h2>
+
+        <button
+          className="button button--increment"
+          onClick={this.props.dispatch.bind(this, increment())}>
+          +
+        </button>
+
+        <button
+          className="button button--decrement"
+          onClick={this.props.dispatch.bind(this, decrement())}>
+          -
+        </button>
+      </div>
     );
   }
+}
+
+function mapStateToProps(state) {
+  return { state };
+}
+
+function mapDispatchToProps(dispatch) {
+  return { dispatch };
 };
+
+export default connect(mapStateToProps, mapDispatchToProps)(Button);
 
