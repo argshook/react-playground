@@ -4,7 +4,7 @@ My own boilerplate for starting simple React projects.
 
 ## How to do
 
-1. `npm i -g babel-cli babel webpack mocha webpack-dev-server`
+1. `npm i -g babel-core webpack mocha webpack-dev-server`
 1. `npm i`
 
 ## How
@@ -25,6 +25,6 @@ with *mocha* and *chai*
 - [ ] Test coverage reports
 - [ ] Figure out proper TDD
 - [X] Redux
-- [ ] Improve webpack dev/build configs
+- [X] Improve webpack dev/build configs
 - [ ] Ensure minimum set of dependencies
 
