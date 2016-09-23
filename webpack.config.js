@@ -17,10 +17,7 @@ const baseConfig = {
       {
         test: /\.jsx?$/,
         exclude: [/node_modules/],
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015', 'stage-0', 'react']
-        }
+        loaders: ['babel-loader?presets[]=es2015,presets[]=stage-0,presets[]=react']
       },
       {
         test: /\.s?[a|c]ss$/,
@@ -44,9 +41,20 @@ const devConfig = {
     new webpack.HotModuleReplacementPlugin()
   ]),
 
+  module: {
+    loaders: baseConfig.module.loaders.map(l => {
+      if(l.test.test('.js')) {
+        l.loaders.unshift('react-hot-loader');
+      }
+
+      return l;
+    })
+  },
+
   devServer: {
     inline: true,
     hot: true,
+    contentBase: 'src/',
     stats: {
       colors: true
     }

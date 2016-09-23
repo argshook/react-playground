@@ -1,7 +1,8 @@
 import { combineReducers } from 'redux';
-import counter from './counter.js';
+
+import { buttonReducer } from './components/button/redux.js';
 
 export default combineReducers({
-  counter
+  button: buttonReducer
 });
 

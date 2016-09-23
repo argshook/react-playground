@@ -1,16 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore from './configure-store';
-
+import store from './store';
 import './styles/main.scss';
 
-import Button from './components/button';
+import Root from './components/root';
 
 render(
-  <Provider store={configureStore()}>
-    <Button />
+  <Provider store={store()}>
+    <Root />
   </Provider>,
   document.getElementById('root')
 );
+
+if(module.hot) { module.hot.accept(); }
 
