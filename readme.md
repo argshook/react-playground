@@ -21,8 +21,10 @@ with *mocha* and *chai*
 
 ## Todo
 
+- [X] Update all packages
 - [ ] Test coverage reports
 - [ ] Figure out proper TDD
 - [X] Redux
 - [ ] Improve webpack dev/build configs
+- [ ] Ensure minimum set of dependencies
 
