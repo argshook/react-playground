@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const deepAssign = require('deep-assign');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const baseConfig = {
   entry: {
@@ -21,12 +22,18 @@ const baseConfig = {
       },
       {
         test: /\.s?[a|c]ss$/,
+        exclude: [/node_modules/],
         loader: 'style-loader!css-loader!postcss-loader'
       }
     ]
   },
 
-  plugins: [],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'velocity-injectable-loader?inject=velocity.data.js!./src/index.vm',
+      inject: false
+    })
+  ],
 
   postcss: function() {
     return [
@@ -54,7 +61,6 @@ const devConfig = {
   devServer: {
     inline: true,
     hot: true,
-    contentBase: 'src/',
     stats: {
       colors: true
     }

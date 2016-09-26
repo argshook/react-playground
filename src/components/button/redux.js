@@ -3,7 +3,7 @@ const initialState = 0;
 export function buttonReducer(state = initialState, action) {
   switch (action.type) {
     case 'INCREMENT':
-      return state + 10;
+      return ++state;
 
     case 'DECREMENT':
       return --state;
