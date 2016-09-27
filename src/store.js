@@ -8,7 +8,7 @@ import {
 import thunk from 'redux-thunk';
 import rootReducer from './root-reducer';
 
-export default function(initialState = {}) {
+export default (initialState = {}) => {
   const store = createStore(
     rootReducer,
     initialState,
@@ -19,6 +19,13 @@ export default function(initialState = {}) {
     )
   );
 
+  if(module.hot) {
+    module.hot.accept('./root-reducer', () => {
+      const nextRootReducer = require('./root-reducer').default;
+      store.replaceReducer(nextRootReducer);
+    });
+  }
+
   return store;
-}
+};
 
