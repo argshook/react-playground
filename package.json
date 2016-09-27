@@ -33,7 +33,7 @@
     "react-addons-test-utils": "^15.3.2",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.1",
-    "velocity-injectable-loader": "0.0.2",
+    "velocity-injectable-loader": "~0.0.3",
     "webpack": "^1.13.2"
   },
   "dependencies": {

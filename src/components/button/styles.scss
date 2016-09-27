@@ -10,7 +10,7 @@
   color: #fff;
   border: 0;
 
-  &--increment { background: green; }
-  &--decrement { background: red; }
+  &--increment { background: color(green l(-10%)); }
+  &--decrement { background: color(red l(-20%)); }
 }
 
